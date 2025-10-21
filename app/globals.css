@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Clear+Sans:wght@400;700&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 18px;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@layer utilities {
+  /* Animations */
+  @keyframes appear {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes pop {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .animate-appear {
+    animation: appear 200ms ease 100ms;
+    animation-fill-mode: backwards;
+  }
+
+  .animate-pop {
+    animation: pop 200ms ease 100ms;
+    animation-fill-mode: backwards;
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 800ms ease 1200ms;
+    animation-fill-mode: both;
+  }
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 520px) {
+  html {
+    font-size: 15px;
+  }
+
+  body {
+    padding: 20px;
+  }
+}
